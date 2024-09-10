@@ -18,7 +18,8 @@ public class ConstructorTest extends DataTest {
         HomePage homePage = new HomePage(driver);
         homePage.visibilityTextAssembleBurger();
         homePage.clickTabSauces();
-        Assert.assertEquals(homePage.getTabSelected(), "Соусы");
+        // Исправленный порядок аргументов: ожидаемое значение сначала
+        Assert.assertEquals("Соусы", homePage.getTabSelected());
     }
 
     @Test
@@ -27,7 +28,8 @@ public class ConstructorTest extends DataTest {
         HomePage homePage = new HomePage(driver);
         homePage.visibilityTextAssembleBurger();
         homePage.clickTabFillings();
-        Assert.assertEquals(homePage.getTabSelected(), "Начинки");
+        // Исправленный порядок аргументов: ожидаемое значение сначала
+        Assert.assertEquals("Начинки", homePage.getTabSelected());
     }
 
     @Test
@@ -37,6 +39,7 @@ public class ConstructorTest extends DataTest {
         homePage.visibilityTextAssembleBurger();
         homePage.clickTabFillings();
         homePage.clickTabBuns();
-        Assert.assertEquals(homePage.getTabSelected(), "Булки");
+        // Исправленный порядок аргументов: ожидаемое значение сначала
+        Assert.assertEquals("Булки", homePage.getTabSelected());
     }
 }

@@ -1,5 +1,6 @@
 package org.example.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -37,51 +38,51 @@ public class HomePage {
     private final By tabSelected = By.xpath(".//div[contains(@class, 'tab_tab_type_current__2BEPc')]");
 
 
-    //"Видимость текста Регистрация"
+    //@Step("Видимость текста Регистрация")
     public boolean visibilityTextAssembleBurger() {
         new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(ExpectedConditions.visibilityOfElementLocated(textAssembleBurger));
         return true;
     }
 
-    //"Кликабельность кнопки Личный кабинет"
+    //@Step("Кликабельность кнопки Личный кабинет")
     public void clickableButtonPersonalAccount() {
         new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(ExpectedConditions.elementToBeClickable(buttonLoginToAccount));
     }
 
-    //"Кликабельность кнопки Войти в аккаунт"
+    //@Step("Кликабельность кнопки Войти в аккаунт")
     public void clickableButtonSignInToAccount() {
         new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(ExpectedConditions.elementToBeClickable(buttonLoginToAccount));
     }
 
-    //"Клик по кнопке Личный кабинет"
+    //@Step("Клик по кнопке Личный кабинет")
     public void clickButtonPersonalAccount() {
         driver.findElement(buttonPersonalAccount).click();
     }
 
-    //"Клик по кнопке Войти в аккаунт"
+    //@Step("Клик по кнопке Войти в аккаунт")
     public void clickButtonSignInToAccount() {
         driver.findElement(buttonLoginToAccount).click();
     }
 
-    //"Клик по вкладке Булки"
+    //@Step("Клик по вкладке Булки")
     public void clickTabBuns() {
         driver.findElement(tabBuns).click();
     }
 
-    //"Клик по вкладке Соусы"
+    //@Step("Клик по вкладке Соусы")
     public void clickTabSauces() {
         driver.findElement(tabSauces).click();
     }
 
-    //"Клик по вкладке Начинки"
+    //@Step("Клик по вкладке Начинки")
     public void clickTabFillings() {
         driver.findElement(tabFillings).click();
     }
 
-    //"Возврат названия выбранной вкладки"
+    //@Step("Возврат названия выбранной вкладки")
     public String getTabSelected() {
         new WebDriverWait(driver, Duration.ofSeconds(3));
         return driver.findElement(tabSelected).getText();
